@@ -1,0 +1,29 @@
+{% extends "voluntariado/voluntario_master.html" %}
+{% load staticfiles %}
+{% load bootstrap %}
+
+{% block tittle %} <span class="mdl-layout-title">Nuevo Ingreso</span> {% endblock  %}
+{% block contenido %}
+
+
+
+<div class="demo-graphs mdl-shadow--2dp mdl-color--white  mdl-cell--8-col mdl-grid">
+		<div class="col-lg-2"> 
+		</div>
+		<form action="" method="post" name="formacedula" enctype="multipart/form-data">
+		
+		<div class="col-lg-6"> 
+		{% csrf_token %}
+		{{ form|bootstrap }}
+		
+		<input type="submit" name="enviar" onmousemove="validarcedula(cedula)"   class="btn btn-primary" />&nbsp;&nbsp;&nbsp;	
+		<button type="reset" class="btn btn-primary" onclick="location.href='{% url 'voluntarios' %}'">Regresar</button>&nbsp;&nbsp;&nbsp;
+		<button  class="btn btn-primary" onclick="location.href='{% url 'referencia' %}'">New References</button>
+		</div>
+		
+		</form>
+		</div>
+
+
+
+{% endblock %}
